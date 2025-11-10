@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 
 export default function Navbar() {
   return (
-    <nav className="h-28 w-full bg-neutral-200 border-b ">
+    <nav className="sticky top-0 z-50 h-28 w-full bg-neutral-200 border-b">
       <div className="flex items-center justify-between h-full w-full px-16 ">
         {/* Logo */}
         <div className="flex items-center">

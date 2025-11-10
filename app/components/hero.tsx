@@ -3,30 +3,36 @@
 import React from "react";
 import { motion } from "motion/react";
 import { Button } from "@/components/ui/button";
+import { Oswald } from "next/font/google";
+
+const oswaldFont = Oswald({
+  subsets: ["latin"],
+  weight: "700",
+  style: "normal",
+});
 
 export default function HeroSection() {
   return (
-    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-6 py-20">
+    <div className="flex items-center justify-center min-h-[calc(100vh-4rem)] px-6 py-20 font-sans font-bold uppercase">
       <div className="max-w-5xl mx-auto text-center">
         {/* Main Heading with Pop-up Animation */}
         <motion.h1
-          className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-6"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          className={`text-5xl md:text-7xl lg:text-9xl font-bold text-neutral-800 mb-6 ${oswaldFont.className}`}
+          initial={{ opacity: 0, scale: 1, x: 0, y: 0 }}
+          animate={{ opacity: 1, scale: 1, x: 10, y: -30 }}
           transition={{
             duration: 0.5,
             ease: [0.34, 1.56, 0.64, 1], // Bounce effect
           }}
         >
-          Predictions Market for your{" "}
-          <span className="text-blue-600">Enterprise</span>
+          Predictions Market for you{" "}
         </motion.h1>
 
         {/* Subheading with Delayed Pop-up */}
         <motion.p
           className="text-lg md:text-xl text-gray-600 mb-8 max-w-3xl mx-auto"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 1, x: 0, y: 0 }}
+          animate={{ opacity: 1, scale: 1, x: 10, y: -30 }}
           transition={{
             duration: 0.5,
             delay: 0.2,
@@ -41,8 +47,8 @@ export default function HeroSection() {
         {/* CTA Buttons with Staggered Pop-up */}
         <motion.div
           className="flex flex-col sm:flex-row gap-4 justify-center items-center"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 1, x: 0, y: 0 }}
+          animate={{ opacity: 1, scale: 1, x: 10, y: -30 }}
           transition={{
             duration: 0.5,
             delay: 0.4,
@@ -58,10 +64,10 @@ export default function HeroSection() {
         </motion.div>
 
         {/* Feature Pills with Pop-up Animation */}
-        <motion.div
+        {/* <motion.div
           className="flex flex-wrap gap-3 justify-center mt-12"
-          initial={{ opacity: 0, scale: 0.5 }}
-          animate={{ opacity: 1, scale: 1 }}
+          initial={{ opacity: 0, scale: 1 , x: 0, y: 0 }}
+          animate={{ opacity: 1, scale: 1, x: 10, y: -30 }}
           transition={{
             duration: 0.5,
             delay: 0.6,
@@ -85,7 +91,7 @@ export default function HeroSection() {
               </motion.span>
             )
           )}
-        </motion.div>
+        </motion.div> */}
       </div>
     </div>
   );
